@@ -36,6 +36,11 @@ https://training.zuri.team/
 Ingressive For Good Partnership with Zuri
 Category: Internship, Training, Mentored Training
 
+https://online.stanford.edu/graduate-education
+// Empty
+Upgrading my education
+Category: Education, Acadmics
+
 Close all you tabs right now and hand the links over to VPL - Very Important Links.
 Never lose your links again, simply hand it over!
 Very Important Person - VIP, Very Important Link - VPL
