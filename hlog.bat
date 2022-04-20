@@ -1,0 +1,9 @@
+@ECHO OFF
+
+CLS
+
+ECHO. HEROKU LOG STARTS...
+
+heroku logs --tail
+
+ECHO. HEROKU LOG ENDS..
