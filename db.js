@@ -9,7 +9,6 @@
   .catch(console.log)
   .then( () => con.end()); */
 
-  
 console.log("Db connected successfully");
 connection.closeAndEnd = connection.end.bind(connection);
   module.exports = connection;
