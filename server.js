@@ -1,7 +1,7 @@
 const express = require("express");
 const serveStatic = require("serve-static");
 const path = require("path");
-const {user, password, host, database} = require("./config");
+const connection = require("./db");
 const {log} = require("./logging");
 
 const app = express();
@@ -10,10 +10,6 @@ app.get("/*", function(request, response){
   response.sendFile(path.join(__dirname, "/dist/index.html"));
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 app.listen(port);
-console.log(`App is listening of port: ${port}`)
-
-log(
-  user, password, host, database,
-);
+log(`App is listening of port: ${port}`, connection.end());
