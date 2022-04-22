@@ -1,3 +1,41 @@
+https://www.javascripttutorial.net/regular-expression-word-boundaries/
+RegExp word boundaries
+RegExp, Tutorial 
+
+https://www.npmjs.com/package/mysql2?activeTab=readme
+Mysql2 Node Driver Docs
+Driver, Node Package Instruction, steps, guid
+
+https://devcenter.heroku.com/articles/platform-api-reference#config-vars
+Heroku API Service
+For reference - From here All of Heroku ervices can be accessed over a REST API
+Category: Reference, Tutorial, Guid, Steps, Docs
+
+https://devcenter.heroku.com/articles/getting-started-with-nodejs#scale-the-app
+Heroku Guide - Node.js
+//Empty
+Category: intructions, steps, guid, tutorials
+
+https://www.npmjs.com/package/mysql
+Node.js MySQL driver module
+This package seems to be a driver interfacing directly with the MySQL server
+Category: Node packages
+
+https://devcenter.heroku.com/articles/cleardb
+ClearDB Heroku instructions
+// Empty
+Category: intructions, steps, guid, tutorials
+
+https://www.cleardb.com/developers/connect/paas/heroku
+Connecting to ClearDB from Code - Ruby, Java, Node, Python, etc
+This teaches how to connect to ClearDB from code
+Category: intructions, steps, guid, tutorials
+
+https://www.cleardb.com/developers/connect/paas/heroku/nodejs
+Connecting to ClearDB from Node.js
+This teaches how to connect to ClearDB from code
+Category: intructions, steps, guid, tutorials
+
 https://www.codementor.io/@ravianand1988/easily-4-steps-to-continuous-delivery-auto-deploy-vue-js-app-on-heroku-xljk977pq
 Heroku create a vue project 
 // This will be the title. It'll be a link pointing to the link above. 
@@ -40,6 +78,35 @@ https://online.stanford.edu/graduate-education
 // Empty
 Upgrading my education
 Category: Education, Acadmics
+
+<https://www.w3schools.com/sql/default.asp>
+W3Schools Geberal SQL Briefs
+SQL syntax tutorials - reference guide
+Category: Ref, Guid, tutorial
+
+https://www.w3schools.com/nodejs/nodejs_mysql.asp
+W3Schools Node-MySQL Briefs
+Briefly get a working example of Node using the MySQL database
+Category: Tutorials, Quick briefs
+
+https://www.w3schools.com/nodejs/nodejs_mysql.asp
+W3Schools SQL Briefs
+Briefly get a working example of SQL database syntax
+Category: Tutorials, Quick briefs
+
+https://www.w3schools.com/nodejs/nodejs_uploadfiles.asp
+W3Schools Node File upload Brief
+Small example of Node file upload
+Category: Tutorials, Quick briefs
+
+https://www.w3schools.com/nodejs/nodejs_email.asp
+W3Schools Node Emailing upload Brief
+Small example of Node emailing
+Category: Tutorials, Quick briefs
+
+VIL says, give me all your links, and let me worry about them. 
+When you need them, I'll be right behind you!
+Never try to remember a funny link again!
 
 Close all you tabs right now and hand the links over to VPL - Very Important Links.
 Never lose your links again, simply hand it over!

@@ -36,10 +36,10 @@ https://training.zuri.team/
 Ingressive For Good Partnership with Zuri
 Category: Internship, Training, Mentored Training
 
-Close all you tabs right now and hand the links over to VPL - Very Important Links.
+Close all you tabs right now and hand the links over to VIL - Very Important Links.
 Never lose your links again, simply hand it over!
-Very Important Person - VIP, Very Important Link - VPL
-You are as connected as your links, keep them alive on VPL!
+Very Important Person - VIP, Very Important Link - VIL
+You are as connected as your links, keep them alive on VIL!
 
 VPL is an MVP project I'm hoping will make our worklife easier.
 Later support will be added to install this as a browser extesion.
