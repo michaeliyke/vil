@@ -11,3 +11,7 @@ app.get("/*", function(request, response){
 const port = process.env.PORT || 8080;
 app.listen(port);
 console.log(`App is listening of port: ${port}`)
+
+console.log(
+  `App is listening of PORT: ${port}`,
+);
