@@ -2,10 +2,13 @@
 node_modules
 /dist
 
+# Unrelated files
+test.py
 
 # local env files
 .env.local
 .env.*.local
+.env
 
 # Log files
 npm-debug.log*
