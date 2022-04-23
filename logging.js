@@ -1,5 +1,5 @@
 function l(...args) {
-  const b = '\n ';
+  const b = "\n ";
   for (const arg of args) console.log(b, arg);
 }
 
