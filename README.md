@@ -111,7 +111,7 @@ Category: Tutorials, Quick briefs
 
 VIL says, give me all your links, and let me worry about them. 
 When you need them, I'll be right behind you!
-Never try to remember a funny link again!
+Never try to remember a funny link ever!
 
 Close all you tabs right now and hand the links over to VPL - Very Important Links.
 Never lose your links again, simply hand it over!
