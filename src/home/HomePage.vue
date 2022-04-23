@@ -6,10 +6,10 @@
 When you need them, I'll be right behind you!
 Never try to remember a funny link ever!</p>
 <section>
-  <form action="#" class="call">
+  <router-link :to="{name: 'UserDashboard'}" class="call">
     <!-- on click, submit this form to the link in action-->
-    <input class="user-login" type="button" value="Login" name="login" />
-  </form>
+    <input class="user-login" type="submit" value="Login" name="login" />
+  </router-link>
   <footer class="intro">
     <h2>what is <span class="vil-word">VIL</span>?</h2>
     <p class="info"><span class="vil-word">VIL</span> aims to make our worklife easier by
@@ -36,7 +36,14 @@ export default {
   name: "HomePage",
   components: {
   },
-
+  data() {
+    return {};
+  },
+  methods: {
+    navigate() {
+      console.log(this.name);
+    },
+  },
 };
 </script>
 <style>
@@ -66,6 +73,8 @@ h1 {
   margin-right: auto;
   margin-left: auto;
   text-align: right;
+  display: block;
+  text-decoration: none;
 }
 input.user-login {
   padding: 0.4rem 1.2rem;
