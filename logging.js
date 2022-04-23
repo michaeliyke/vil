@@ -1,6 +1,8 @@
-function l() {
-  const b = "\n ";
-  for(const arg of arguments) console.log(b, arg);
+function l(...args) {
+  const b = '\n ';
+  for (const arg of args) console.log(b, arg);
 }
 
-module.exports = {l, ...console,L: l, LOG: l, log: l, console};
+module.exports = {
+  l, ...console, L: l, LOG: l, log: l, console,
+};

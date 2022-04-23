@@ -1,3 +1,8 @@
+https://ss64.com/nt/for.html
+Batch file - FOR LOOP
+Loop through files, folders, number set, file contents, and result set
+Category: Batch, steps, Tutorial
+
 https://www.javascripttutorial.net/regular-expression-word-boundaries/
 RegExp word boundaries
 RegExp, Tutorial 
