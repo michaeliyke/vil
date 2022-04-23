@@ -1,14 +1,15 @@
 <template>
-  <section class="user-dashboard">
-    <h1>User Dashboard</h1>
+  <section class="side-panel">
+    <h2>The side-panel</h2>
   </section>
 </template>
 
 <script>
 export default {
-  name: "UserDashboard",
+  name: "SideBar",
 };
 </script>
 
 <style>
+
 </style>

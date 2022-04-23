@@ -8,6 +8,7 @@ const { log } = require("./logging");
 const app = express();
 app.use("/", serveStatic(path.join(__dirname, "/dist")));
 app.get("/*", (request, response) => {
+  log(request.path, request.params);
   response.sendFile(path.join(__dirname, "/dist/index.html"));
 });
 

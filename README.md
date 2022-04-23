@@ -1,3 +1,8 @@
+https://vuejs.org/guide/scaling-up/ssr.html
+Vue supports SSR and SSG tecniques
+Server-Side Rendering - SSR and Server-Side Generation or pre-rendering - SSG
+Category: Vue, Tutorial
+
 https://ss64.com/nt/for.html
 Batch file - FOR LOOP
 Loop through files, folders, number set, file contents, and result set

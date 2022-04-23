@@ -1,19 +1,20 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import HomePage from "../home/HomePage.vue";
-import UserDashboard from "../dashboard/UserDashboard.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import HomeComponent from "../home/HomeComponent.vue";
+import DashboardComponent from "../dashboard/DashboardComponent.vue";
+import NotFoundComponent from "../notfound/NotFoundComponent.vue";
 
 export default createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: "/",
       name: "HomePage",
-      component: HomePage,
+      component: HomeComponent,
     },
     {
       path: "/home",
       name: "UserDashboard",
-      component: UserDashboard,
+      component: DashboardComponent,
       alias: ["/profile", "/account"],
     },
     {
@@ -23,6 +24,11 @@ export default createRouter({
     {
       path: "/dashboard",
       redirect: "/home",
+    },
+    {
+      path: "/:pathMatch(.*)",
+      name: "NotFound",
+      component: NotFoundComponent,
     },
   ],
 });
