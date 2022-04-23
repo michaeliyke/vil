@@ -1,5 +1,5 @@
-const mysql = require('mysql2');
-const connection = mysql.createConnection(require('./config'));
+const mysql = require("mysql2");
+const connection = mysql.createConnection(require("./config"));
 
 /* con.promise().query("SELECT 1")
   .then( ([rows,fields]) => {
@@ -8,6 +8,6 @@ const connection = mysql.createConnection(require('./config'));
   .catch(console.log)
   .then( () => con.end()); */
 
-console.log('Db connected successfully');
+console.log("Db connected successfully");
 connection.closeAndEnd = connection.end.bind(connection);
 module.exports = connection;
