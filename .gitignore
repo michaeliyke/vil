@@ -4,6 +4,7 @@ node_modules
 
 # Unrelated files
 test.py
+scratchpad.*
 
 # local env files
 .env.local
