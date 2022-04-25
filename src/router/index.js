@@ -26,9 +26,13 @@ export default createRouter({
       redirect: "/home",
     },
     {
-      path: "/:pathMatch(.*)",
+      path: "/404",
       name: "NotFound",
       component: NotFoundComponent,
+    },
+    {
+      path: "/:pathMatch(.*)",
+      redirect: "/404",
     },
   ],
 });
