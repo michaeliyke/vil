@@ -6,9 +6,9 @@
 When you need them, I'll be right behind you!
 Never try to remember a funny link ever!</p>
 <section>
-  <el-row class="mb-4 call">
-    <el-button  plain @click="navigate()" class="user-login">Login</el-button>
-  </el-row>
+  <div class="mb-4 call">
+    <input type="button"  plain @click="navigate()" class="user-login" value="Login" />
+  </div>
   <footer class="intro">
     <h2>what is <span class="vil-word">VIL</span>?</h2>
     <p class="info"><span class="vil-word">VIL</span> aims to make our worklife easier by

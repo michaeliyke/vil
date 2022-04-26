@@ -10,9 +10,9 @@ import SideBar from "./SideBar.vue";
 
 export default {
   name: "DashboardComponent",
-  components: [
+  components: {
     SideBar,
-  ],
+  },
 };
 </script>
 

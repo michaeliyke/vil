@@ -1,10 +1,12 @@
-import { createRouter, createWebHistory } from "vue-router";
+import VueRouter from "vue-router";
 import HomeComponent from "../home/HomeComponent.vue";
 import DashboardComponent from "../dashboard/DashboardComponent.vue";
 import NotFoundComponent from "../notfound/NotFoundComponent.vue";
 
-export default createRouter({
-  history: createWebHistory(),
+/* this.$route, this.$router */
+
+export default new VueRouter({
+  mode: "history",
   routes: [
     {
       path: "/",
