@@ -1,6 +1,7 @@
 
 secrete: git filter-branch --force --index-filter \
-  git-filter-repo --path .env --invert-paths <!-- Remove .env file from history -->
+  git-filter-repo --path .env --path find --invert-paths 
+  <!-- Remove .env file from history -->
 Title: Git remove file from commit history. 
 Note: I love this piece a lot
 Link: https://stackoverflow.com/questions/43762338/how-to-remove-file-from-git-history
