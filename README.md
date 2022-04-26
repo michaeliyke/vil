@@ -1,3 +1,20 @@
+
+secrete: git filter-branch --force --index-filter \
+  git-filter-repo --path .env --invert-paths <!-- Remove .env file from history -->
+Title: Git remove file from commit history. 
+Note: I love this piece a lot
+Link: https://stackoverflow.com/questions/43762338/how-to-remove-file-from-git-history
+Link: https://www.mankier.com/1/git-filter-repo
+Category: Git commands
+
+my-vil.herokuapp.com/notes
+Do not forget your secrets anymore! Simply add them under a category or two for 
+easy access. Make a short note of them is possible and don't forget to add a 
+link if necessary
+
+
+
+
 https://vuejs.org/guide/scaling-up/ssr.html
 Vue supports SSR and SSG tecniques
 Server-Side Rendering - SSR and Server-Side Generation or pre-rendering - SSG
