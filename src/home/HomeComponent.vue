@@ -1,17 +1,27 @@
 <template>
-    <main>
-      <h1>The <span class="vil-word">VIL</span> Homepage!</h1>
-    <p class="info"><span class="vil-word">VIL</span> says, give me all your links, and
+  <v-sheet light color="white" class="blue-grey--text text--darken-3">
+
+    <v-card-title class="display-1 title_">
+      Welcome to <span class="vil-word">VIL</span>
+    </v-card-title>
+    <p class="info">
+      Give me all your links, <span class="vil-word">VIL</span> says, and
     let me worry about them.
-When you need them, I'll be right behind you!
-Never try to remember a funny link ever!</p>
+    When you need them, I'll be right behind!
+    Never bother to remember those long strings anymore, ever!</p>
+
 <section>
   <div class="mb-4 call">
-    <input type="button"  plain @click="navigate()" class="user-login" value="Login" />
+    <v-btn @click="navigate()" elevation="2" class="user-login">Login</v-btn>
   </div>
+  <v-divider light></v-divider>
+
   <footer class="intro">
-    <h2>what is <span class="vil-word">VIL</span>?</h2>
-    <p class="info"><span class="vil-word">VIL</span> aims to make our worklife easier by
+    <v-card-title class="headline title_">what is
+      <span class="vil-word"> VIL</span>?
+      </v-card-title>
+    <p class="info highlight">
+      <span class="vil-word">VIL</span> aims to make our worklife easier by
     helping us to save
       time. It enables you to
 easily save and organize your important links for later in a hassle-free manner.</p>
@@ -24,9 +34,20 @@ comes in. Simply move over and save them for free in an easily accessible manner
 move on. When you are ready, simply come back to VPL and continue from where you
 stopped.
 </p>
+
+ <v-card-title class="headline title_">Where does it live?
+    </v-card-title>
+    <p class="info highlight">
+      Our target with <span class="vil-word">VIL</span>
+      is to work where you work. When <span class="vil-word">VIL</span> is fully
+      functional, you'll find it in your browser, on your command line and in your
+      mobile devices. A tool like  <span class="vil-word">VIL</span> must be both
+      available and easy to use accross platforms in order to stay close enough to
+      the user when they need it.
+      </p>
   </footer>
 </section>
-    </main>
+   </v-sheet>
 </template>
 
 <script>
@@ -46,6 +67,12 @@ export default {
 };
 </script>
 <style>
+
+.v-card__title{
+  display: block !important;
+  text-align: center;
+}
+
 main {
   max-width: 82%;
   background-color: #fff;
@@ -54,19 +81,21 @@ main {
   font-family: 'Times New Roman', Times, serif;
   margin: 1% auto;
 }
-h1 {
-  text-align: center;
-}
 .vil-word {
-  font-family:cursive;
+  color: #778594;
 }
 .info {
-  background-color: rgba(238, 238, 238, 0.3);
   padding: 1rem;
   max-width: 74%;
-  margin: 10% auto;
-  border-right: 4px solid #123456;
-  margin-bottom: 15%;
+  margin: 1rem auto;
+}
+
+.v-application p.info {
+  background-color: rgba(238, 238, 238, 0) !important;
+}
+.v-application p.info.highlight {
+      border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+
 }
 .call {
   max-width: 74%;
@@ -96,7 +125,6 @@ input.user-login:hover {
   border-color: rgba(250, 10, 58, 1);;
 }
 .intro {
-  background-color: rgba(238, 238, 238, 0.3);
   padding-bottom: 1px;
   padding-top: 1px;
   margin-top: 10%;
@@ -112,47 +140,3 @@ input.user-login:hover {
   background-color: unset;
 }
 </style>
-
-<!--
-  Hello Sir, I realized it could be more effective communicating my developments
-  here since we are in thi journey together. First I must appreciate all your efforts
-  to see me through these very difficult situations. Your guide has been a fort to me
-  and I always look forward to it.
-
-  This is why I feel that it' important you understand fully how I'm doing to enable
-  you understand what has been achieved, what is in progress and what is a potential
-  next step.
-
-  I'm also descovering that utilizing this communication method, you'll get a more
-  timely update about my developments as opposed to cummulatively waiting for a physical
-  meeting.
-
-  Sir I'm very grateful for all of this. I'm hopeful without doubt that all this will
-  become story soon, and I will be another great battle you fought and won, my joy being
-  that I have fought at your side.
-
-  FORWARD TO NOW
-  The test as I told you was not great! I had one or two challenges while taking it.
-  There was an output on the test page that confused me so that even when I had written
-  enough code to start getting an expected output, I thougt I was still wrong as I was
-  not aware of the system output I mentioned. Because of this, I spent the whole 1hr
-  3o min on that question alone with no result. When I discovered the issue was near
-  the end of y sesion when I had already deleted everything and started afresh in
-  another more tedious direction. There I realized that I got output wven when I didn't
-  ask for it, this made me discover the system output but it was late already to create
-  the required algorithm.
-
-  Due to this and other smaller unexpected outcomes, I was scored zero for the test.
-  When I protested to the people via mail and whatsapp, they later considered to give
-  me a second chance. God willing, the same question I embattled at first was among.
-  Since I had already practiced it and I immediately dove in and wrote it. It is the
-  hardest on the list. My solution was working perfectly however, there was an addional
-  feature appended to the functionality which I couldn't complete implementing within
-  the given time. I just submitted because I had used 1hr already and yet 3 more
-  questions were waiting. I solved two more confidently but couldn't attempt the third
-  one when I ran out of time.
-
-  For this I hoped for a sore around 80% but it turned out that I was  not awarded mark
-  for the first and question at all. It was painful but I also knew that the will of God
-  must be done!
- -->

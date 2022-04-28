@@ -9,6 +9,7 @@ module.exports = {
   ],
   parserOptions: {
     parser: "babel-eslint",
+    ecmaVersion: 12,
   },
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
@@ -19,6 +20,7 @@ module.exports = {
     "no-multi-spaces": ["error"],
     "global-require": 0,
     "no-restricted-syntax": 0,
+    "linebreak-style": 0,
   },
   overrides: [
     {

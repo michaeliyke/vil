@@ -1,7 +1,8 @@
 import VueRouter from "vue-router";
-import HomeComponent from "../home/HomeComponent.vue";
-import DashboardComponent from "../dashboard/DashboardComponent.vue";
-import NotFoundComponent from "../notfound/NotFoundComponent.vue";
+import HomeComponent from "@/home/HomeComponent.vue";
+import DashboardComponent from "@/dashboard/DashboardComponent.vue";
+import NotFoundComponent from "@/notfound/NotFoundComponent.vue";
+import TestComponent from "@/components/TestComponent.vue";
 
 /* this.$route, this.$router */
 
@@ -31,6 +32,12 @@ export default new VueRouter({
       path: "/404",
       name: "NotFound",
       component: NotFoundComponent,
+    },
+    {
+      path: "/test",
+      name: "Test",
+      component: TestComponent,
+      alias: ["/t", "/tests", "/x", "/y", "/xyz", "/a", "/b", "/c", "/abc"],
     },
     {
       path: "/:pathMatch(.*)",
