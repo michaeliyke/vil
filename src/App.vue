@@ -16,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.v-main{
+  width: 100%;
+}
+</style>

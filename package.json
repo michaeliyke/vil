@@ -7,7 +7,13 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lift": "node --version"
+  },
+  "lift": {
+    "--lift": "lift",
+    "-l": "lift",
+    "--l": "lift"
   },
   "dependencies": {
     "core-js": "^3.6.5",

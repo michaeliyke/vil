@@ -1,7 +1,5 @@
 <template>
-  <section class="side-panel">
-    <h2>The side-panel</h2>
-  </section>
+  <v-card>User Dashboard</v-card>
 </template>
 
 <script>
