@@ -14,23 +14,7 @@
       </v-col>
 
       <v-col class="hidden-sm-and-up col-12 fixed py-0 px-0">
-        <mobile-tray :trayName="trayName" />
-        <v-card class="text-center py-1" color="rgba(255, 255, 255, 0.1)">
-          <v-btn
-            v-for="(t, index) of trays"
-            :key="index"
-            :class="t.classes"
-            :name="t.name"
-            :ref="t.name"
-            small
-            fab
-            dark
-            :color="t.color"
-            @click="toggleTray(t.name)"
-          >
-            <v-icon dark> {{ t.icon }} </v-icon>
-          </v-btn>
-        </v-card>
+        <mobile-tray :trays="trays" :trayName="trayName" />
       </v-col>
     </v-row>
   </v-container>
@@ -84,9 +68,6 @@ export default {
     };
   },
   methods: {
-    toggleTray(name) {
-      this.trayName = this.trayName === name ? "" : name;
-    },
     hideTray(event) {
       if (this.hasClass(event.target, "mdi") === false) {
         this.trayName = "";

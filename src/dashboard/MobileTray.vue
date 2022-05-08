@@ -1,26 +1,39 @@
 <template>
-  <v-row justify="space-around" v-if="tray">
-    <v-col cols="auto">
-      <v-dialog transition="dialog-bottom-transition" max-width="600">
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn color="primary" v-bind="attrs" v-on="on">From bottom</v-btn>
+  <v-card class="text-center py-1" color="rgba(255, 255, 255, 0.1)">
+    <v-row justify="center">
+      <v-menu
+        min-width="67%"
+        tile
+        v-for="(t, index) of trays"
+        :key="index"
+        transition="slide-x-transition"
+        right
+      >
+        <template v-slot:activator="{ attrs, on }">
+          <v-btn
+            :color="t.color"
+            :class="t.classes"
+            :name="t.name"
+            :ref="t.name"
+            small
+            dark
+            fab
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon dark> {{ t.icon }} </v-icon>
+          </v-btn>
         </template>
-        <template v-slot:default="dialog">
-          <v-card>
-            <v-toolbar color="primary" dark>Opening from the bottom</v-toolbar>
-            <v-card-text>
-              <div class="text-h2 pa-12">Hello world!</div>
-            </v-card-text>
-            <v-card-actions class="justify-end">
-              <v-btn text @click="dialog.value = false">Close</v-btn>
-            </v-card-actions>
-          </v-card>
-        </template>
-      </v-dialog>
-    </v-col>
-  </v-row>
-</template>
 
+        <v-list>
+          <v-list-item v-for="item in items" :key="item" link>
+            <v-list-item-title v-text="item"></v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-row>
+  </v-card>
+</template>
 <script>
 export default {
   name: "MobileTray",
@@ -31,7 +44,12 @@ export default {
   },
   props: {
     trayName: String,
+    trays: Array,
   },
+  methods: {},
+  data: () => ({
+    items: [...Array(4)].map((a, b) => `Item number ${b}`),
+  }),
 };
 </script>
 
