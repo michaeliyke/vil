@@ -21,6 +21,8 @@ module.exports = {
     "global-require": 0,
     "no-restricted-syntax": 0,
     "linebreak-style": 0,
+    "operator-linebreak": 0,
+    // "arrow-body-style": 0,
   },
   overrides: [
     {
