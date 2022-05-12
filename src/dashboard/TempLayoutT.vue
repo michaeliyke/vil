@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-return */
 <template>
   <div>
     <v-row justify="center">
@@ -10,13 +11,13 @@
         <v-card tile>
           <!-- tool-bar starts -->
           <v-toolbar flat dark color="primary">
-            <v-btn icon dark @click="dialog = false">
+            <v-btn>
               <v-icon>mdi-close</v-icon>
             </v-btn>
             <v-toolbar-title>Settings</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-              <v-btn dark text @click="dialog = false"> Save </v-btn>
+              <v-btn dark text> Save </v-btn>
             </v-toolbar-items>
             <v-menu bottom right offset-y>
               <template v-slot:activator="{ on, attrs }">
@@ -67,17 +68,44 @@
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
+const { log, log: l } = console;
+
 export default {
   name: "TempLayout",
-  data() {
-    return {
-      notifications: false,
-      sound: true,
-      widgets: false,
-    };
-  },
+  data: () => ({
+    dialog: false,
+  }),
   props: {
-    dialog: Boolean,
+    notify: {
+      type: Function,
+      required: true,
+      validator(fn) {
+        return typeof fn === "function";
+      },
+    },
+    trayName: {
+      default: "",
+      type: String,
+      required: true,
+      validator(str) {
+        return ["categories", "tags", "write", ""].includes(str);
+      },
+    },
+  },
+  watch: {
+    trayName: {
+      immediate: true,
+      handler() {
+        this.dialog = this.trayName !== "";
+      },
+    },
+    dialog: {
+      handler() {
+        if (this.dialog === true) return;
+        if (this.trayName !== "") this.notify();
+      },
+    },
   },
 };
 </script>

@@ -22,7 +22,8 @@ module.exports = {
     "no-restricted-syntax": 0,
     "linebreak-style": 0,
     "operator-linebreak": 0,
-    // "arrow-body-style": 0,
+    "arrow-body-style": 0,
+    "no-useless-return": 0,
   },
   overrides: [
     {

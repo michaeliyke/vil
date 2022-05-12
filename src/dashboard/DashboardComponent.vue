@@ -1,6 +1,6 @@
 <template>
-  <v-container class="user-dashboard" @click="hideAll" @keydown.esc="hideAll">
-    <v-row class="">
+  <v-container class="user-dashboard">
+    <v-row>
       <v-col class="cyan lighten-4 hidden-xs-only col-sm-3 col-md-3 col-lg-4">
         <left-panel></left-panel>
       </v-col>
@@ -14,18 +14,19 @@
       </v-col>
 
       <v-col class="hidden-sm-and-up col-12 fixed py-0 px-0">
-        <mobile-tray :trays="trays" :trayName="trayName" :dialog="dialog" />
+        <mobile-tray :trays="trays" :trayName="trayName" :notify="notify" />
         <v-btn
+          data-role="tray"
           color="primary"
           class="ma-2"
           id="xyz"
           ref="xyz"
           dark
-          @click="dialog = !dialog"
+          @click="tray1"
           >Button</v-btn
         >
-        <v-btn role="btn-1" data-set="given">Button</v-btn>
-        <v-btn role="btn-2" data-set="given">Button</v-btn>
+        <v-btn data-role="tray" data-set="given" @click="tray1">Button</v-btn>
+        <v-btn data-role="tray" data-set="given" @click="tray1">Button</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -41,6 +42,9 @@ import MobileTray from "@/dashboard/TempLayoutT.vue";
 
 //  ref=xyz, id=xyz => console.log(this.$refs.xyz.$el.id);
 
+// eslint-disable-next-line no-unused-vars
+const { log, log: l } = console;
+
 export default {
   name: "DashboardComponent",
   components: {
@@ -52,13 +56,6 @@ export default {
   },
   data() {
     return {
-      dialog: false,
-      text: "center",
-      icon: "justify",
-      toggle_none: null,
-      toggle_one: 0,
-      toggle_exclusive: 2,
-      toggle_multiple: [0, 1, 2],
       trayName: "",
       trays: [
         {
@@ -83,25 +80,51 @@ export default {
     };
   },
   methods: {
-    hideAll(event) {
-      this.hideTray(event);
-      this.toggleDialog(event);
+    notify() {
+      this.trayName = "";
     },
-    toggleDialog(event) {
-      if (this.dialog && !this.isBtn(event.target)) {
-        this.dialog = false;
+
+    getBTN(t) {
+      if (!(t instanceof HTMLElement)) throw new Error(`invalid target ${t}`);
+      if (t.dataset.role === "tray") return t;
+      if (t.parentNode instanceof HTMLElement) {
+        if (t.parentNode.dataset.role === "tray") return t.parentNode;
       }
+      return null;
     },
 
-    isBtn(target) {
-      return [target, target.parentNode].some((x) => x.id === "xyz");
+    tray1() {
+      if (this.trayName === "categories" || this.trayName !== "") {
+        this.trayName = "";
+        return null;
+      }
+      this.trayName = "categories";
+      return null;
     },
 
-    hideTray(event) {
-      if (this.hasClass(event.target, "mdi") === false) {
+    tray2() {
+      this.trayName = "tags";
+    },
+
+    tray3() {
+      this.trayName = "write";
+    },
+
+    hideAll() {
+      this.hideTray();
+      // this.toggleDialog(event);
+    },
+
+    toggleDialog(event) {
+      if (this.trayName && this.getBTN(event.target) === null) {
         this.trayName = "";
       }
     },
+
+    hideTray() {
+      this.trayName = "";
+    },
+
     hasClass(element, className) {
       return element.classList.contains(className);
     },
