@@ -7,60 +7,20 @@
         hide-overlay
         transition="dialog-bottom-transition"
         scrollable
+        :persistent="trayName !== 'categories'"
       >
         <v-card tile>
           <!-- tool-bar starts -->
           <v-toolbar flat dark color="primary">
-            <v-btn>
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
             <v-toolbar-title>Settings</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-items>
-              <v-btn dark text> Save </v-btn>
-            </v-toolbar-items>
-            <v-menu bottom right offset-y>
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn icon v-bind="attrs" v-on="on">
-                  <v-icon>mdi-dots-vertical</v-icon>
-                  open
-                </v-btn>
-              </template>
-              <v-list>
-                <v-list-item>
-                  <v-list-item-title>Click me</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
           </v-toolbar>
           <!-- tool-bar ends -->
 
           <v-card-text>
-            <v-list three-line subheader>
-              <v-subheader>User Controls</v-subheader>
-              <v-list-item>
-                <v-list-item-content>
-                  <v-list-item-title>Content filtering</v-list-item-title>
-                  <v-list-item-subtitle>
-                    Set the content filtering level to restrict apps that can be
-                    downloaded
-                  </v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-content>
-                  <v-list-item-title>Password</v-list-item-title>
-                  <v-list-item-subtitle>
-                    Require password for purchase or use password to restrict
-                    purchase
-                  </v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list>
-            <v-divider></v-divider>
+            <h1 class="pa-4" v-if="trayName === 'categories'">Categorizing</h1>
+            <h1 class="pa-4" v-if="trayName === 'tags'">Tagging</h1>
+            <h1 class="pa-4" v-if="trayName === 'write'">Writing</h1>
           </v-card-text>
-
-          <!-- <div style="flex: 1 1 auto"></div> -->
         </v-card>
       </v-dialog>
     </v-row>
@@ -77,6 +37,7 @@ export default {
     dialog: false,
   }),
   props: {
+    keep: Boolean,
     notify: {
       type: Function,
       required: true,
@@ -89,7 +50,7 @@ export default {
       type: String,
       required: true,
       validator(str) {
-        return ["categories", "tags", "write", ""].includes(str);
+        return ["categories", "tags", "write", "", "keep"].includes(str);
       },
     },
   },
@@ -97,6 +58,8 @@ export default {
     trayName: {
       immediate: true,
       handler() {
+        if (this.keep) return;
+        if (this.trayName === "keep") return;
         this.dialog = this.trayName !== "";
       },
     },

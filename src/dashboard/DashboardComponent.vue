@@ -14,7 +14,12 @@
       </v-col>
 
       <v-col class="hidden-sm-and-up col-12 fixed py-0 px-0">
-        <mobile-tray :trays="trays" :trayName="trayName" :notify="notify" />
+        <mobile-tray
+          :trays="trays"
+          :trayName="trayName"
+          :notify="notify"
+          :keep="keep"
+        />
         <v-btn
           data-role="tray"
           color="primary"
@@ -22,11 +27,11 @@
           id="xyz"
           ref="xyz"
           dark
-          @click="tray1"
+          @click="categories"
           >Button</v-btn
         >
-        <v-btn data-role="tray" data-set="given" @click="tray1">Button</v-btn>
-        <v-btn data-role="tray" data-set="given" @click="tray1">Button</v-btn>
+        <v-btn data-role="tray" data-set="given" @click="tags">Button</v-btn>
+        <v-btn data-role="tray" data-set="given" @click="write">Button</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -56,6 +61,7 @@ export default {
   },
   data() {
     return {
+      keep: false,
       trayName: "",
       trays: [
         {
@@ -93,40 +99,29 @@ export default {
       return null;
     },
 
-    tray1() {
-      if (this.trayName === "categories" || this.trayName !== "") {
+    setTray(tag) {
+      this.keep = false;
+      if (this.trayName === tag) {
         this.trayName = "";
-        return null;
+        return;
       }
-      this.trayName = "categories";
-      return null;
-    },
 
-    tray2() {
-      this.trayName = "tags";
-    },
-
-    tray3() {
-      this.trayName = "write";
-    },
-
-    hideAll() {
-      this.hideTray();
-      // this.toggleDialog(event);
-    },
-
-    toggleDialog(event) {
-      if (this.trayName && this.getBTN(event.target) === null) {
-        this.trayName = "";
+      if (this.trayName !== "") {
+        this.keep = true;
       }
+      this.trayName = tag;
     },
 
-    hideTray() {
-      this.trayName = "";
+    categories() {
+      this.setTray("categories");
     },
 
-    hasClass(element, className) {
-      return element.classList.contains(className);
+    tags() {
+      this.setTray("tags");
+    },
+
+    write() {
+      this.setTray("write");
     },
   },
 };
