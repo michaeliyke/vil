@@ -7,19 +7,38 @@
         hide-overlay
         transition="dialog-bottom-transition"
         scrollable
-        :persistent="trayName !== 'categories'"
+        :persistent="trayName !== 'write'"
+        :width="tray.width(trayName)"
       >
         <v-card tile>
           <!-- tool-bar starts -->
           <v-toolbar flat dark color="primary">
-            <v-toolbar-title>Settings</v-toolbar-title>
+            <v-toolbar-title>
+              <h2>{{ trayName }}</h2>
+            </v-toolbar-title>
           </v-toolbar>
           <!-- tool-bar ends -->
 
-          <v-card-text>
-            <h1 class="pa-4" v-if="trayName === 'categories'">Categorizing</h1>
-            <h1 class="pa-4" v-if="trayName === 'tags'">Tagging</h1>
-            <h1 class="pa-4" v-if="trayName === 'write'">Writing</h1>
+          <v-card-text v-if="trayName === 'categories'">
+            <v-list>
+              <v-list-item v-for="(category, index) of categories" :key="index">
+                <v-list-item-icon>{{ index }}</v-list-item-icon>
+                <v-list-item-content>{{ category }}</v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card-text>
+
+          <v-card-text v-if="trayName === 'tags'">
+            <v-list>
+              <v-list-item v-for="(tag, index) of tags" :key="index">
+                <v-list-item-icon>{{ index }}</v-list-item-icon>
+                <v-list-item-content>{{ tag }}</v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card-text>
+
+          <v-card-text v-if="trayName === 'write'">
+            <mobile-write />
           </v-card-text>
         </v-card>
       </v-dialog>
@@ -28,13 +47,25 @@
 </template>
 
 <script>
+import MobileWrite from "@/dashboard/MobileWrite.vue";
 // eslint-disable-next-line no-unused-vars
 const { log, log: l } = console;
 
 export default {
   name: "TempLayout",
+  components: {
+    MobileWrite,
+  },
   data: () => ({
     dialog: false,
+    tags: ["Fear", "Courage", "Forge", "Career", "Hobby", "Education"],
+    categories: ["Art", "Science", "Technology", "Wisdom", "Human", "Bush"],
+    tray: {
+      width(trayName) {
+        if (trayName === "write") return "80%";
+        return "60%";
+      },
+    },
   }),
   props: {
     keep: Boolean,
@@ -76,7 +107,7 @@ export default {
 <style>
 .v-dialog__content {
   height: auto !important;
-  bottom: 1em !important;
+  bottom: 3em !important;
   align-items: flex-end !important;
 }
 .v-dialog {

@@ -20,18 +20,21 @@
           :notify="notify"
           :keep="keep"
         />
-        <v-btn
-          data-role="tray"
-          color="primary"
-          class="ma-2"
-          id="xyz"
-          ref="xyz"
-          dark
-          @click="categories"
-          >Button</v-btn
-        >
-        <v-btn data-role="tray" data-set="given" @click="tags">Button</v-btn>
-        <v-btn data-role="tray" data-set="given" @click="write">Button</v-btn>
+        <v-card class="text-center py-3" color="rgba(255, 255, 255, 0.1)">
+          <v-btn
+            v-for="(t, index) of trays"
+            :key="index"
+            :class="t.classes"
+            small
+            fab
+            dark
+            :color="t.color"
+            data-role="tray"
+            @click="t.clickHandler"
+          >
+            <v-icon dark> {{ t.icon }} </v-icon>
+          </v-btn>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -69,18 +72,21 @@ export default {
           icon: "mdi-bookmark-multiple",
           color: "indigo",
           classes: "mx-2",
+          clickHandler: this.categories,
         },
         {
           name: "tags",
           icon: "mdi-tag-multiple",
           color: "teal",
           classes: "mx-2",
+          clickHandler: this.tags,
         },
         {
           name: "write",
           icon: "mdi-send",
           color: "cyan",
           classes: "mx-2",
+          clickHandler: this.write,
         },
       ],
     };

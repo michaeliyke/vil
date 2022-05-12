@@ -1,4 +1,3 @@
- 
  <v-row justify="space-around" v-if="true">
     <v-col cols="auto">
       <v-dialog transition="dialog-bottom-transition" max-width="200">
