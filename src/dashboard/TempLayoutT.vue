@@ -7,7 +7,7 @@
         hide-overlay
         transition="dialog-bottom-transition"
         scrollable
-        :persistent="trayName !== 'write'"
+        persistent
         :width="tray.width(trayName)"
       >
         <v-card tile>

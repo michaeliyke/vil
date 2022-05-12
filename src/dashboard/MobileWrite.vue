@@ -1,6 +1,6 @@
 <template>
   <validation-observer ref="observer" v-slot="{ invalid }">
-    <form @submit.prevent="submit">
+    <form @submit.prevent="submit" class="mt-4">
       <validation-provider
         v-slot="{ errors }"
         name="Name"
@@ -12,6 +12,7 @@
           :error-messages="errors"
           label="Name"
           required
+          filled
         ></v-text-field>
       </validation-provider>
       <validation-provider
@@ -29,6 +30,7 @@
           :error-messages="errors"
           label="Phone Number"
           required
+          filled
         ></v-text-field>
       </validation-provider>
       <validation-provider
@@ -41,6 +43,7 @@
           :error-messages="errors"
           label="E-mail"
           required
+          filled
         ></v-text-field>
       </validation-provider>
       <validation-provider v-slot="{ errors }" name="select" rules="required">
@@ -51,6 +54,7 @@
           label="Select"
           data-vv-name="select"
           required
+          filled
         ></v-select>
       </validation-provider>
       <validation-provider v-slot="{ errors }" rules="required" name="checkbox">
