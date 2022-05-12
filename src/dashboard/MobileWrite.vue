@@ -46,26 +46,17 @@
           filled
         ></v-text-field>
       </validation-provider>
-      <validation-provider v-slot="{ errors }" name="select" rules="required">
-        <v-select
-          v-model="select"
+      <validation-provider v-slot="{ errors }" name="textarea" rules="required">
+        <v-textarea
+          v-model="textarea"
+          data-vv-name="textarea"
           :items="items"
           :error-messages="errors"
-          label="Select"
-          data-vv-name="select"
+          solo
+          name="input-7-4"
+          label="Solo textarea"
           required
-          filled
-        ></v-select>
-      </validation-provider>
-      <validation-provider v-slot="{ errors }" rules="required" name="checkbox">
-        <v-checkbox
-          v-model="checkbox"
-          :error-messages="errors"
-          value="1"
-          label="Option"
-          type="checkbox"
-          required
-        ></v-checkbox>
+        ></v-textarea>
       </validation-provider>
 
       <v-btn class="mr-4" type="submit" :disabled="invalid"> submit </v-btn>
@@ -126,9 +117,8 @@ export default {
     name: "",
     phoneNumber: "",
     email: "",
-    select: null,
     items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-    checkbox: null,
+    textarea: "",
   }),
 
   methods: {
@@ -139,8 +129,7 @@ export default {
       this.name = "";
       this.phoneNumber = "";
       this.email = "";
-      this.select = null;
-      this.checkbox = null;
+      this.textarea = "";
       this.$refs.observer.reset();
     },
   },
